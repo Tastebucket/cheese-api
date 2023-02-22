@@ -6,6 +6,9 @@ const moldSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    isFuzzy: {
+        type: Boolean
+    },
     diameter: {
         type: Number
     },

@@ -3,11 +3,11 @@ const Cheese = require('./cheese')
 const db = require('../../config/db')
 
 const startCheeses = [
-    { type: 'Swiss', isStinky: false, isSoft: true, hasHoles: true},
-    { type: 'Gorgonzola', isStinky: true, isSoft: true, hasHoles: false},
-    { type: 'Parmesan', isStinky: true, isSoft: false, hasHoles: false},
-    { type: 'Jarlsberg', isStinky: false, isSoft: true, hasHoles: true},
-    { type: 'Muenster', isStinky: false, isSoft: true, hasHoles: false}
+    { type: 'Swiss', age: '3 weeks', isStinky: false, isSoft: true, hasHoles: true},
+    { type: 'Gorgonzola', age: '5 days', isStinky: true, isSoft: true, hasHoles: false},
+    { type: 'Parmesan', age: '2 years', isStinky: true, isSoft: false, hasHoles: false},
+    { type: 'Jarlsberg', age: '1 month', isStinky: false, isSoft: true, hasHoles: true},
+    { type: 'Muenster', age: '1 week', isStinky: false, isSoft: true, hasHoles: false}
 ]
 
 mongoose.connect(db, {

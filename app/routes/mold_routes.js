@@ -35,7 +35,7 @@ router.post('/molds/:cheeseId', removeBlanks, (req, res, next) => {
         .then(cheese => {
             console.log('the cheese: ', cheese)
             console.log('the mold: ', mold)
-            cheese.molds.push(mold)
+            cheese.mold.push(mold)
             return cheese.save()
         })
         .then(cheese => res.status(201).json({ cheese: cheese }))
@@ -51,7 +51,7 @@ router.patch('/molds/:cheeseId/:moldId', requireToken, removeBlanks, (req, res, 
     Cheese.findById(cheeseId)
         .then(handle404)
         .then(cheese => {
-            const theMold = cheese.molds.id(moldId)
+            const theMold = cheese.mold.id(moldId)
             requireOwnership(req, cheese)
             theMold.set(req.body.mold)
 
@@ -70,7 +70,7 @@ router.delete('/molds/:cheeseId/:moldId', requireToken, (req, res, next) => {
     Cheese.findById(cheeseId)
         .then(handle404)
         .then(cheese => {
-            const theMold = cheese.molds.id(moldId)
+            const theMold = cheese.mold.id(moldId)
             requireOwnership(req, cheese)
             theMold.remove()
             return cheese.save()

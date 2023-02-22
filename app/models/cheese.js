@@ -8,17 +8,24 @@ const cheeseSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
+		age: {
+			type: String,
+			required: true
+		},
 		isStinky: {
 			type: String,
 			required: true,
+			default: false
 		},
 		isSoft: {
 			type: Boolean,
 			required: true,
+			default: false
 		},
 		hasHoles: {
 			type: Boolean,
 			required: true,
+			default: false
 		},
 		mold: [moldSchema],
 		owner: {
